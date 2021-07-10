@@ -24,7 +24,6 @@ const VideoState = ({ children }) => {
   const [myMicStatus, setMyMicStatus] = useState(true);
   const [userMicStatus, setUserMicStatus] = useState();
   const [msgRcv, setMsgRcv] = useState("");
- 
 
   const myVideo = useRef();
   const userVideo = useRef();
@@ -39,6 +38,8 @@ const VideoState = ({ children }) => {
         setStream(currentStream);
         myVideo.current.srcObject = currentStream;
       });
+
+    // <---LOGIN AUTHENTICATION--->
 
     if (localStorage.getItem("name")) {
       setName(localStorage.getItem("name"));
@@ -77,6 +78,8 @@ const VideoState = ({ children }) => {
     });
   }, []);
 
+  // <---RECORD CALL--->
+
   const Record = () => {
     // global.URL.createObjectURL = jest.fn();
     const parts = [];
@@ -112,9 +115,7 @@ const VideoState = ({ children }) => {
           a.click();
         };
       });
-
-      // callUser();
-    };
+  };
 
   const answerCall = () => {
     setCallAccepted(true);
@@ -194,7 +195,7 @@ const VideoState = ({ children }) => {
     setCallEnded(true);
 
     connectionRef.current.destroy();
-    
+
     socket.emit("endCall", { id: otherUser });
     window.location.reload();
   };
@@ -210,7 +211,6 @@ const VideoState = ({ children }) => {
     msg.timestamp = Date.now();
     msg.sender = name;
     setChat([...chat, msg]);
-    
   };
 
   return (

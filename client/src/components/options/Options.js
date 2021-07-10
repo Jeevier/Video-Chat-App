@@ -8,11 +8,9 @@ import VideoContext from "../../context/VideoContext";
 import Hang from "../../assests/hang.svg";
 import {
   TelegramShareButton,
-  // LinkedinShareButton,
   EmailShareButton,
   TelegramIcon,
   EmailIcon,
-  // LinkedinIcon,
   WhatsappShareButton,
   WhatsappIcon,
 } from "react-share";
@@ -69,7 +67,7 @@ const Options = ({ themeValue }) => {
       setIsModalVisible(true);
       setOtherUser(call.from);
     } else setIsModalVisible(false);
-  }, [call.isReceivingCall, callAccepted, call.from, setOtherUser] );
+  }, [call.isReceivingCall, callAccepted, call.from, setOtherUser]);
 
   return (
     <div>
@@ -102,14 +100,7 @@ const Options = ({ themeValue }) => {
             </Button>
           )}
 
-          {/* <Button
-            variant="contained"
-            onClick={shareScreen}
-            className={classes.hang}
-          >
-            <img src={Hang} alt="hang up" style={{ height: "15px" }} />
-            &nbsp; Present Now
-          </Button> */}
+          {/* <---CHANGE THEME---> */}
         </div>
       ) : (
         <div
@@ -145,6 +136,8 @@ const Options = ({ themeValue }) => {
                   Meeting code
                 </Button>
               </CopyToClipboard>
+
+              {/* <---SHARE MEETING CODE ---> */}
 
               <div className={classes.share_social}>
                 <WhatsappShareButton

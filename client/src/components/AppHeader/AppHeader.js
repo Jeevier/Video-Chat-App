@@ -11,13 +11,15 @@ const AppHeader = ({ themeValue, themeHandler, filterHandler }) => {
   let updatedS = calltime.s,
     updatedM = calltime.m,
     updatedH = calltime.h;
+
+  // <---REAL TIME DIGITAL CLOCK--->
   const updateTime = () => {
     setTime(new Date().toLocaleTimeString());
   };
   if (!callAccepted) {
     setInterval(updateTime, 1000);
   }
-
+  //<--CALL DURATION --->
   useEffect(() => {
     if (callAccepted) {
       const run = () => {
@@ -35,6 +37,8 @@ const AppHeader = ({ themeValue, themeHandler, filterHandler }) => {
       setInterval(run, 1000);
     }
   }, [callAccepted]);
+
+  //<--FILTERS--->
 
   const menu = (
     <Menu>
@@ -84,6 +88,7 @@ const AppHeader = ({ themeValue, themeHandler, filterHandler }) => {
 
       {callAccepted && (
         <div style={{ fontSize: "17px" }}>
+          <span>Call Duration: </span>
           <span>{updatedH}</span>&nbsp;:&nbsp;
           <span>{updatedM}</span>&nbsp;:&nbsp;
           <span>{updatedS}</span>

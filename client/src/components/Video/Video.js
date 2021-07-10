@@ -76,7 +76,7 @@ const Video = ({ filter }) => {
         icon: <MessageOutlined style={{ color: "#108ee9" }} />,
       });
     }
-  }, [msgRcv,isModalVisible] );
+  }, [msgRcv, isModalVisible]);
 
   return (
     <div className="grid">
@@ -195,7 +195,7 @@ const Video = ({ filter }) => {
           <div></div>
         </div>
       )}
-
+      {/* <---UPDATING UI AFTER ACCEPTING A CALL--> */}
       {callAccepted && !callEnded && userVideo && (
         <div className="card2" style={{ textAlign: "center" }} id="video2">
           <div style={{ height: "2rem" }}>

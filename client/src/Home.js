@@ -1,4 +1,4 @@
-import {useState } from "react";
+import { useState } from "react";
 
 import Video from "./components/Video/Video";
 import VideoState from "./context/VideoState";

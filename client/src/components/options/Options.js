@@ -141,7 +141,7 @@ const Options = ({ themeValue }) => {
 
               <div className={classes.share_social}>
                 <WhatsappShareButton
-                  url={`https://viochat.tech/`}
+                  url={`https://justvideoit.netlify.app/`}
                   title={`Join this meeting with the given code ${me}\n`}
                   separator="Link: "
                   className={classes.share_icon}
@@ -149,7 +149,7 @@ const Options = ({ themeValue }) => {
                   <WhatsappIcon size={26} round />
                 </WhatsappShareButton>
                 <TelegramShareButton
-                  url={`https://viochat.tech/\n Join this meeting with the given code ${me}\n`}
+                  url={`https://justvideoit.netlify.app/\n Join this meeting with the given code ${me}\n`}
                   separator="Link: "
                   className={classes.share_icon}
                 >
@@ -157,7 +157,7 @@ const Options = ({ themeValue }) => {
                 </TelegramShareButton>
 
                 <EmailShareButton
-                  url={`https://viochat.tech/\n Join this meeting with the given code ${me}\n`}
+                  url={`https://justvideoit.netlify.app/\n Join this meeting with the given code ${me}\n`}
                   separator="Link"
                   className={classes.share_icon}
                 >
